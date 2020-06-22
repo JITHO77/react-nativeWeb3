@@ -1,5 +1,6 @@
 # To up and run Web3 with react-native
 
+```
 react-native init APPNAME
 npm i --save react-native-crypto
 npm i --save react-native-randombytes
@@ -7,9 +8,10 @@ react-native link react-native-randombytes
 npm i --save-dev rn-nodeify@latest
 ./node_modules/.bin/rn-nodeify --install
 npm i --save node-libs-browser
+```
 
 # modify APPNAME/metro.config.js to read:
-
+```
 const extraNodeModules = require('node-libs-browser');
 
 module.exports = {
@@ -25,10 +27,10 @@ module.exports = {
     }),
   },
 };
-
+```
 # modify shim.js to read:
 
-
+```
 if (typeof __dirname === 'undefined') global.__dirname = '/'
 if (typeof __filename === 'undefined') global.__filename = ''
 if (typeof process === 'undefined') {
@@ -55,7 +57,9 @@ if (typeof localStorage !== 'undefined') {
 // If using the crypto shim, uncomment the following line to ensure
 // crypto is loaded first, so it can populate global.crypto
 require('crypto')
-
-# import './shim' in App.js at top
-# npm i --save web3
-#react-native run-android
+```
+ ```
+ import './shim' in App.js at top
+ npm i --save web3
+ react-native run-android
+ ```
